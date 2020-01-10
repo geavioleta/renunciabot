@@ -6,7 +6,7 @@ def get_tweet(owm):
 	for i in range(4):
 		try:
 			coin = random.random()
-			if coin > 0.36:
+			if coin > 0.15:
 				cities = ['Santiago, CL', 'Concepción, CL', 'Valparaiso, CL', 'Temuco, CL', 'Antofagasta, CL', 'Puerto Montt, CL', 'Punta Arenas, CL', 'Valdivia, CL', 'Castro, CL', 'Santiago, CL', 'Santiago, CL', 'Viña del Mar, CL', 'Valparaiso, CL', 'Concepción, CL']
 				place1 = random.choice(cities)
 				cities = list(filter(lambda a: a != place1, cities))
@@ -26,7 +26,7 @@ def get_tweet(owm):
 					msg = "Renuncia!\n" + msg
 			return msg
 		except:
-			pass
+			time.sleep(1)
 	return random.choice(["#RenunciaPiñera", "#ChileDesperto", "#fuerapiñera", "#NuevaConstitución"])
 
 def run():
@@ -51,7 +51,7 @@ def run():
 				print("{0} posted: {1}".format(status.user.name, status.text))
 				post_num += 1
 				start = time.time()
-				wait_time = random.choice(list(range(900, 3600)))
+				wait_time = random.choice(list(range(900, 2400)))
 			except:
 				print(f"COULD NOT POST: {msg}")
 				time.sleep(20)
